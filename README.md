@@ -8,7 +8,7 @@ Bu proje, Web Teknolojileri ve Programlama dersi ödevi kapsamında geliştirilm
 
 **Projenin canlı demosunu görmek için buraya tıklayın:**
 
-[https://kendi-vercel-linkinizi-buraya-yapistirin.vercel.app](https://kendi-vercel-linkinizi-buraya-yapistirin.vercel.app)
+[https://kampus-film-lac.vercel.app/](https://kampus-film-lac.vercel.app/)
 
 
 ---
