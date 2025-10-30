@@ -1,0 +1,213 @@
+/* Temel Uygulama Düzeni (Layout) */
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f4f7f6;
+  width: auto;
+}
+.app-header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+  width: auto;
+}
+.app-main-content {
+  flex-grow: 1;
+  padding: 1.5rem;
+  width: auto;
+  margin: 0 auto;
+  color: black;
+}
+.footer {
+  background-color: #34495e;
+  color: #ecf0f1;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  width: auto;
+}
+
+/* Ana Sayfa Düzeni (Home.jsx) */
+.home-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 1.5rem;
+  width: auto;
+}
+.search-box, .filters {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.search-box input, .filters select {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+.home-main {
+  display: grid;
+  grid-template-columns: 1fr 350px; /* Ana içerik ve yan panel */
+  gap: 1.5rem;
+  width: auto;
+}
+
+/* Hata/Yükleme Mesajları */
+.loading-message, .error-message, .empty-message {
+  font-size: 1.2rem;
+  color: #555;
+  text-align: center;
+  padding: 2rem;
+}
+.error-message { color: #e74c3c; }
+
+/* Dizi Listesi ve Kart (TVList.jsx, TVCard.jsx) */
+.tv-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+.tv-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.tv-card img {
+  width: 100%;
+  height: 370px; /* Sabit yükseklik */
+  object-fit: cover;
+}
+.tv-card-info {
+  padding: 1rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.tv-card-info h3 { margin-top: 0; }
+.tv-card-info p span {
+  margin-right: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+.tv-card-info .summary {
+  flex-grow: 1;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+.tv-card-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.tv-card-buttons button, .tv-card-buttons .btn-detail {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.tv-card-buttons button {
+  background-color: #3498db;
+  color: white;
+}
+.tv-card-buttons .btn-detail {
+  background-color: #2ecc71;
+  color: white;
+}
+
+/* Yan Panel (WatchlistPanel.jsx) */
+.watchlist-panel {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  align-self: flex-start; /* Üstte kal */
+}
+.watchlist-panel h4 { margin-top: 0; }
+.watchlist-panel ul { list-style: none; padding: 0; }
+.watchlist-panel li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+.watchlist-panel .btn-remove {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.watchlist-panel .btn-clear {
+  width: 100%;
+  background-color: #e74c3c;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+/* Sayfalama (Pagination.jsx) */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 2rem 0;
+}
+.pagination button {
+  padding: 0.5rem 1rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.pagination button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+/* Detay Sayfası (ShowDetail.jsx) */
+.detail-container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.btn-back {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
+.detail-header {
+  display: flex;
+  gap: 2rem;
+}
+.detail-header img { border-radius: 8px; }
+.detail-info p { line-height: 1.6; }
+.detail-episodes { margin-top: 2rem; }
+.detail-episodes ul { list-style-type: none; padding: 0; }
+.detail-episodes li {
+  padding: 0.75rem;
+  border-bottom: 1px solid #eee;
+}
